@@ -1,0 +1,14 @@
+<section class="pb-5">
+    <div class="container">
+       <div class="row g-4">
+        <h1 class="text-center text-main">All Brands</h1>
+         <div *ngFor="let brands of brandsData " class="col-sm-6 col-md-4 col-lg-3">
+           <div class=" rounded p-2 shadow sect">
+               <img class="w-100 " [src]="brands.image" alt="" >
+               <h3 class="text-center text-main py-3">{{brands.name}}</h3>
+           </div>
+         </div>
+       </div>
+    </div>
+ </section>
+   

@@ -1,0 +1,24 @@
+<div class="w-50 mx-auto pb-5">
+    <form [formGroup]="shippingAddress" (ngSubmit)="handleOnline()">
+        <label for="details">Details</label>
+        <input type="text" class="form-control mb-3" formControlName="details" id="details">
+        <div *ngIf="shippingAddress.get('details')?.errors && shippingAddress.get('details')?.touched" class="alert alert-danger">
+            <p *ngIf="shippingAddress.get('details')?.getError('required')" class="mb-0">details is required</p>
+            <p *ngIf="shippingAddress.get('details')?.getError('minlength')" class="mb-0">details MinLength is 3</p>
+        </div>
+
+        <label for="phone">Phone</label>
+        <input type="tel" class="form-control mb-3" formControlName="phone" id="phone">
+        <div *ngIf="shippingAddress.get('phone')?.errors && shippingAddress.get('phone')?.touched" class="alert alert-danger">
+            <p *ngIf="shippingAddress.get('phone')?.getError('required')" class="mb-0">Phone is required</p>
+            <p *ngIf="shippingAddress.get('phone')?.getError('pattern')" class="mb-0">Invalid Phone</p>
+        </div>
+
+        <label for="city">City</label>
+        <input type="text" class="form-control mb-3" formControlName="city" id="city">
+        <div *ngIf="shippingAddress.get('city')?.errors && shippingAddress.get('city')?.touched" class="alert alert-danger">
+            <p *ngIf="shippingAddress.get('city')?.getError('required')" class="mb-0">city is required</p>
+        </div>
+        <button [disabled]="shippingAddress.invalid" class="btn btn-outline-info w-100">Pay Now</button>
+    </form>
+</div>

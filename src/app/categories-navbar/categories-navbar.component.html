@@ -1,0 +1,12 @@
+<section>
+ <div class="container">
+    <div class="row g-4">
+      <div *ngFor="let category of categoryData " class="col-sm-6 col-md-4 col-lg-4">
+        <div class="rounded p-2 shadow sect">
+            <img class="w-100 " [src]="category.image" alt="" >
+            <h3 class="text-center text-main">{{category.name}}</h3>
+        </div>
+      </div>
+    </div>
+ </div>
+</section>

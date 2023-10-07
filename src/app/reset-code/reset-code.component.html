@@ -1,0 +1,10 @@
+<div class="container">
+    <h2>please enter your verification code</h2>
+    <div *ngIf="apiError" class="alert alert-danger">
+        {{apiError}}</div>
+    <form class="my-3" [formGroup]="verfiyForm" (ngSubmit)="verifyCode(verfiyForm)">
+        <input formControlName="resetCode" type="email" class="form-control py-3 " placeholder="Enter Your resetCode">
+        <button [disabled]="verfiyForm.invalid" type="submit" class="btn btn-lg me-auto btn-outline-success my-3">
+            <span>Verify Code</span></button>
+    </form>
+</div>

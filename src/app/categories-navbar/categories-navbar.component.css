@@ -1,0 +1,7 @@
+img{
+    width: 380px;
+    height: 460px;
+}
+.sect:hover{
+    border: 1px solid #4fa74f;
+}
